@@ -1,0 +1,105 @@
+.App {
+  /* text-align: center; */
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.field {
+  display: block;
+
+}
+.form {
+  /* background-image: url(./images/horse\ 3.png); */
+  /* background-size:cover;
+  background-position: center center; */
+}
+button {
+  margin: 4em;
+  background-color: darkgray;
+  border-radius: 2em;
+  font-size: 1.2em;
+  width: fit-content;
+  align-items: center;
+}
+
+.form-area{
+  display: flex;
+
+  padding: 1.9em;
+  flex-direction: column;
+}
+.input {
+  width: 800px;
+}
+
+.grid {
+  margin-left: 10px;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(73, 79, 82);
+  color: white;
+}
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+
+}
+
+.muiTextField {
+  margin: 10px 0;
+}
+
+.footer {
+  margin: 20px;
+  background-color: rgb(136, 141, 143);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.link {
+  display: flex;
+  justify-content: space-around;
+}
+.form {
+  margin-left: 10em;
+}
