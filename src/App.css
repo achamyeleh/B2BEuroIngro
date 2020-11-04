@@ -103,3 +103,48 @@ nav {
 .form {
   margin-left: 10em;
 }
+
+body {
+    background-color: tan;
+}
+/* this syle applies for any screen size less than 992px */
+@media screen and (max-width:992px){ 
+  body{
+    background-color: blue;
+  }
+}
+@media screen and (max-width:680px){
+  body{
+    background-color: olive;
+  }
+}
+/* all - referes to anything i.e screen, print or speech device. */
+@media all and (max-width:500px){  
+  body{
+    background-color: olive;
+  }
+}
+/* you can omit 'all and' , because it is the default */
+@media (max-width:500px) {
+  body{
+    background-color: olive;
+  }
+}
+
+@media (orientation: landscape) {
+  .title{
+    color: green;
+  }
+}
+/* you can combine them */
+@media (orientation: portrait) and (max-height: 500px) {
+  .subtitle {
+    color: cyan;
+  }
+}
+/* OR - i.e if either of the two holds true*/ 
+@media (orientation: portrait), (max-height: 500px) {
+  .subtitle {
+    color: cyan;
+  }
+}
