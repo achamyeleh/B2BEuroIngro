@@ -8,6 +8,7 @@ import FormHelperText from '@material-ui/core/FormHelperText'
 import '../App.css'
 import { RecentActorsRounded } from '@material-ui/icons';
 import { string } from 'yup';
+import PropTypes from 'prop-types';
 
 export interface MUIDropBoxItem {
     label: string;
@@ -23,7 +24,11 @@ interface MUIDropBoxProps {
 interface MUIDropBoxFieldProps extends FieldInputProps<string> {
     children: ReactNode;
     label: string;
-    errorString?: string
+    errorString?: string;
+    value: string;
+    name: string;
+    onChange: any; 
+    onBlur: any;
 }
 const MUIDropBoxField:React.FC<MUIDropBoxFieldProps> =({children, label, errorString, value, name , onChange, onBlur}) => {
     return (
@@ -70,4 +75,19 @@ return (
     </div>
 )
 }
+MUIDropBox.propTypes = {
+    name: PropTypes.string.isRequired,
+    items: PropTypes.array.isRequired, 
+    label: PropTypes.string.isRequired
+}
 
+MUIDropBoxField.propTypes = {
+    label: PropTypes.string.isRequired,
+    errorString: PropTypes.string,
+    value: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    onChange: PropTypes.any,
+    onBlur: PropTypes.any,
+    children: PropTypes.any
+    
+  }

@@ -113,7 +113,8 @@ body {
     background-color: blue;
   }
 }
-@media screen and (max-width:680px){
+/* any screen over 680px width size */
+@media screen and (min-width:680px){
   body{
     background-color: olive;
   }
@@ -143,7 +144,7 @@ body {
   }
 }
 /* OR - i.e if either of the two holds true*/ 
-@media (orientation: portrait), (max-height: 500px) {
+@media (orientation: portrait), (min-height: 500px) {
   .subtitle {
     color: cyan;
   }

@@ -85,7 +85,7 @@ import * as React from 'react';
    country: string;
  }
  
- export const RegistrationForm: React.FC<{}> = () => {
+ export const RegistrationForm: React.FC<MyFormValues> = () => {
    const initialValues: MyFormValues = { firstName: '', lastName: '', telegramName: '', channelName: '', 
    email:'', password:'', gender:'', country:''
   //   , birthday: Date.now(), 

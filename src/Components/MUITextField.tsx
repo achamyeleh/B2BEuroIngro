@@ -1,6 +1,7 @@
 import React from 'react';
 import {ErrorMessage, Field} from 'formik'
 import TextField from '@material-ui/core/TextField';
+import PropTypes from 'prop-types';
 import '../App.css'
 
 interface MUITextFieldProps {
@@ -26,3 +27,8 @@ return (
 )
 }
 
+MUITextField.propTypes = {
+    name: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    type: PropTypes.string
+}
