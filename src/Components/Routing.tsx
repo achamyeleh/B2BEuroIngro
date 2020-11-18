@@ -1,10 +1,10 @@
 import React from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Grid from './DisplayGrid'
-import BusinessIdea from './BusinessIdea'
+import BusinessIdea from './businessIdea/BusinessIdea'
 import {RegistrationForm} from './RegistrationForm'
-import AboutUs from './AboutUs'
-import News from './News'
+import AboutUs from './aboutUs/AboutUs'
+import News from './news/News'
 import Home from './Home'
 
  const Routing:React.FC = () => {

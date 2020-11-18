@@ -43,20 +43,28 @@
 
 nav.open {
   height: 100%;
-  /* list-style: none; */
+  list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  background: red;
+  justify-content: start;
+  margin: 15vh 0;
+  background: cornsilk;
 }
 
 .side-bar li {
-  margin: 0.5rem 0;
+  margin: 0.9rem 0;
 }
 .side-bar a {
   color: #521751;
   text-decoration: none;
   font-size: 1.2rem;
+}
+
+.side-bar .item {
+  color: #521751;
+  text-decoration: none;
+  font-size: 1.6rem;
+  margin: 3em 0;
 }
 
 .side-bar a:hover,

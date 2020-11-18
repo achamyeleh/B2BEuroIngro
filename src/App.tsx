@@ -12,9 +12,9 @@ import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import Home from './Components/Home';
 import { RegistrationForm } from './Components/RegistrationForm';
 import Grid from './Components/DisplayGrid';
-import BusinessIdea from './Components/BusinessIdea';
-import News from './Components/News';
-import AboutUs from './Components/AboutUs';
+import BusinessIdea from './Components/businessIdea/BusinessIdea';
+import News from './Components/news/News';
+import AboutUs from './Components/aboutUs/AboutUs';
 
 
 const client = new ApolloClient({

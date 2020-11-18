@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from "prop-types";
 import './sidebar.css'
 
-const BackDrop: React.FC<{click (): void}> = (props) => {
+const BackDrop: React.FC<{ click (): void }> = (props) => {
   return (
     <div className="backdrop" onClick={props.click}>
       
@@ -11,6 +11,7 @@ const BackDrop: React.FC<{click (): void}> = (props) => {
 }
 
 export default BackDrop;
+
 BackDrop.propTypes = {
   click: PropTypes.func.isRequired,
 };

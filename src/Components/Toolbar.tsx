@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import Grid from './DisplayGrid'
 import '../styles/header.css'
-import BusinessIdea from './BusinessIdea'
+import BusinessIdea from './businessIdea/BusinessIdea'
 import {RegistrationForm} from './RegistrationForm'
-import AboutUs from './AboutUs'
-import News from './News'
+import AboutUs from './aboutUs/AboutUs'
+import News from './news/News'
 import Hamburger from './sidebar/Hamburger'
 import logo from '../images/gollem.png'
 
