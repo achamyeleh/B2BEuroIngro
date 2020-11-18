@@ -1,36 +1,39 @@
-import React from 'react';
-import logo from './images/logo.png';
+import React, {useState} from 'react';
 import './App.css';
-import {RegistrationForm} from './Components/RegistrationForm'
-import Grid from './Components/DisplayGrid'
-import Nav from './Components/Nav'
+import Nav from './Components/Toolbar'
 import {Footer} from './Components/Footer.jsx'
 import {Table} from './Components/test'
 import { ApolloClient, InMemoryCache , ApolloProvider} from '@apollo/client';
+import SideBar from './Components/sidebar/SideBar';
+import BackDrop from './Components/sidebar/BackDrop';
+import { TextSpan } from 'typescript';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',
   cache: new InMemoryCache()
 });
 
+const App:React.FC = () => {
+  const [sideBarOpen, setSideBarOpen] = useState<boolean>(false)
+  
+  const sidebarToggleClickHandler = () => {
+    setSideBarOpen(!sideBarOpen)
+  }
 
-function App() {
+  const backDropClickHandler = () => {
+    setSideBarOpen(false)
+  }
+  let backDrop;
+  if (sideBarOpen) {
+    backDrop = <BackDrop click={backDropClickHandler}/>;
+  }
   return (
-    <div className="App">
+    <div className="App" style={{height:'100%'}}>
       <ApolloProvider client={client}>
-      {/* <Nav /> */}
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" width="50%" /> */}
-        <p>
-          Welcome to GollemTimes page
-        </p>
-      {/* </header> */}
-      {/* <RegistrationForm /> */}
-     
-      {/* <Grid /> */}
-      {/* <Table /> */}
-      <Grid />
-      <Footer />
+        <Nav sidebarClickHandler = {sidebarToggleClickHandler}/>
+        <SideBar show={sideBarOpen} click={backDropClickHandler}/>
+        {backDrop}
+        <Footer />
       </ApolloProvider>
     </div>
   );

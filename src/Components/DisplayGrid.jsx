@@ -4,15 +4,21 @@ import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import '../App.css'
-// sortable: true,  filter: true, width: 400, resiable: true, editable: true, rowSelection="multiple"
+// sortable: true,  filter: true, width: 400, resiable: true, editable: true, rowSelection="multiple", checkboxSelection:true
 const Grid = () => {
     const [rowData, setRowData] = useState([]);
   
     const colDefs = [
-        { headerName: 'userId', field:"userId", sortable: true, filter: true, width: 250, resizable: true, editable: true, floatingFilter: true,checkboxSelection:true},
-        { headerName: 'id', field: 'id', sortable: true, filter: true, width: 250, resizable: true, editable: true, floatingFilter: true},
-        { headerName: 'title', field: 'title', sortable: true, filter: true,width:250, resizable: true, editable: true, floatingFilter: true},
-        { headerName: 'completed', field: 'completed', sortable: true, filter: true,width:250, resizable: true, editable: true, floatingFilter: true}
+        { headerName: 'ቁ.', field:"userId", width: 40},
+        { headerName: 'Telegram', field: 'id', filter: true, width: 200, resizable: true, floatingFilter: true},
+        { headerName: 'ሰኞ', field: 'title', width:80},
+        { headerName: 'ማክሰኞ', field: 'completed', width:80},
+        { headerName: 'እረቡ', field: 'completed', width:80},
+        { headerName: 'ሀሙስ', field: 'completed', width:80},
+        { headerName: 'አርብ', field: 'completed', width:80},
+        { headerName: 'ቅዳሜ', field: 'completed', width:80},
+        { headerName: 'እሁድ', field: 'completed', width:80},
+        { headerName: 'Channel', field: 'completed', filter: true,width:200, resizable: true, floatingFilter: true}
     ]
     // let gridApi;
     const onGridReady = (params) => {

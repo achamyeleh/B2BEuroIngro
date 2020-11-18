@@ -1,45 +1,20 @@
-.App {
-  /* text-align: center; */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
 }
 
-.App-logo {
-  height: 10vmin;
-  pointer-events: none;
+body {
+  font-family: sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input {
+  width: 80%;
 }
 
 .field {
   display: block;
-
 }
 .form {
   /* background-image: url(./images/horse\ 3.png); */
@@ -55,34 +30,15 @@ button {
   align-items: center;
 }
 
-.form-area{
+.form-area {
   display: flex;
 
   padding: 1.9em;
   flex-direction: column;
 }
-.input {
-  width: 800px;
-}
 
 .grid {
   margin-left: 10px;
-}
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 10vh;
-  background: rgb(73, 79, 82);
-  color: white;
-}
-.nav-links {
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-
 }
 
 .muiTextField {
@@ -93,59 +49,11 @@ nav {
   margin: 20px;
   background-color: rgb(136, 141, 143);
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
 }
-.link {
-  display: flex;
-  justify-content: space-around;
-}
+
 .form {
   margin-left: 10em;
-}
-
-body {
-    background-color: tan;
-}
-/* this syle applies for any screen size less than 992px */
-@media screen and (max-width:992px){ 
-  body{
-    background-color: blue;
-  }
-}
-/* any screen over 680px width size */
-@media screen and (min-width:680px){
-  body{
-    background-color: olive;
-  }
-}
-/* all - referes to anything i.e screen, print or speech device. */
-@media all and (max-width:500px){  
-  body{
-    background-color: olive;
-  }
-}
-/* you can omit 'all and' , because it is the default */
-@media (max-width:500px) {
-  body{
-    background-color: olive;
-  }
-}
-
-@media (orientation: landscape) {
-  .title{
-    color: green;
-  }
-}
-/* you can combine them */
-@media (orientation: portrait) and (max-height: 500px) {
-  .subtitle {
-    color: cyan;
-  }
-}
-/* OR - i.e if either of the two holds true*/ 
-@media (orientation: portrait), (min-height: 500px) {
-  .subtitle {
-    color: cyan;
-  }
 }

@@ -1,7 +1,8 @@
 import * as React from 'react';
  import { Formik, FormikHelpers, FormikProps, Form, Field, FieldProps } from 'formik';
  import Button from '@material-ui/core/Button';
- import '../App.css'
+//  import '../App.css'
+import '../styles/components.css'
  import * as Yup from 'yup'
  import RadioButtonsGroup from './Radio'
  import {MUITextField} from './MUITextField'
@@ -90,80 +91,63 @@ import * as React from 'react';
    email:'', password:'', gender:'', country:''
   //   , birthday: Date.now(), 
 };
-   return (
-     <div className="form">
-       <Formik
-         initialValues={initialValues}
-         validationSchema={SignupSchema}
-         onSubmit={(values, actions) => {
-           console.log('acheaaaa',{ values, actions });
-           alert(JSON.stringify(values, null, 2));
-           actions.setSubmitting(false);
-         }}
-       >
-         {({ errors, touched}) => (
-         <Form className="form form-area">
-           <div>
-             <h2>Youtuber Registration Form</h2>
-           </div>
+  return (
+    <div className="form">
+      <Formik
+        initialValues={initialValues}
+        validationSchema={SignupSchema}
+        onSubmit={(values, actions) => {
+          console.log('acheaaaa',{ values, actions });
+          alert(JSON.stringify(values, null, 2));
+          actions.setSubmitting(false);
+        }}>
+        {({ errors, touched}) => (
+        <Form className="form form-area">
+          <div>
+            <h2>{`Youtubers' Registration Form`}</h2>
+          </div>
 
-          <div className="field input">
+        <div className="field input">
              {/* <label htmlFor="firstName">First Name</label>
             <Field id="firstName" name="firstName" placeholder="First Name" onChange={handleChange} />
          </div> 
            {errors.firstName && touched.firstName && <div>{errors.firstName}</div>} */}
-           <div>
-           <MUITextField name="firstName" label="First Name" />
-           </div>
+          <div>
+            <MUITextField name="firstName" label="First Name" />
+          </div>
         
           <div>
-           <MUITextField name="lastName" label="Last Name" />
-           </div>
+            <MUITextField name="lastName" label="Last Name" />
+          </div>
               
           <div>
-           <MUITextField name="email" label="Email" />
-           </div>
+            <MUITextField name="email" label="Email" />
+          </div>
             
-           <div>
-           <MUITextField name="password" label="Password" type="password" />
-           </div>
+          <div>
+            <MUITextField name="password" label="Password" type="password" />
+          </div>
 
           <div>
-           <MUITextField name="telegramName" label="Telegram Name"  />
-           </div>
+            <MUITextField name="telegramName" label="Telegram Name"  />
+          </div>
 
-           <div>
-           <MUITextField name="channelName" label="Channel Name" />
-           </div>
+          <div>
+            <MUITextField name="channelName" label="Channel Name" />
+          </div>
 
-            <div>
-           <MUIDropBox name="gender" label="Gender" items={GenderItems}/>
-           </div> 
+          <div>
+            <MUIDropBox name="gender" label="Gender" items={GenderItems}/>
+          </div> 
 
-           <div>
-           <MUIDropBox name="country" label="Country" items={CountryItems}/>
-           </div>
+          <div>
+            <MUIDropBox name="country" label="Country" items={CountryItems}/>
+          </div>
 
-           <button type="submit">Submit</button>
+          <button type="submit">Submit</button>
         </div>
-         
-        
-          
- {/* ToDo ====== drop box and radio button      and date selector */}
-      
-         {/* <div className="field">
-            <label htmlFor="birthday">Birthday</label>
-            <Field id="birthday" name="birthday" placeholder="Birthday" />
-         </div>
-           {errors.birthday && touched.birthday && <div>{errors.birthday}</div>}
-
-          <RadioButtonsGroup /> */}
-
-           
-
-         </Form>
+        </Form>
          )}
-       </Formik>
-     </div>
-   );
- };
+      </Formik>
+    </div>
+   )};

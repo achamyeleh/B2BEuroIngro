@@ -1,0 +1,46 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.input {
+  width: 80%;
+}
+
+.field {
+  display: block;
+}
+.form {
+  /* background-image: url(../images/horse\ 3.png); */
+  /* background-size:cover;
+  background-position: center center; */
+  margin: auto;
+}
+button {
+  margin: 4em;
+  background-color: darkgray;
+  border-radius: 2em;
+  font-size: 1.2em;
+  width: fit-content;
+  align-items: center;
+}
+
+.form-area {
+  display: flex;
+
+  padding: 1.9em;
+  flex-direction: column;
+}
+
+.muiTextField {
+  margin: 10px 0;
+}
+
+@media screen and (min-width: 780px) {
+  .input {
+    width: 60%;
+  }
+}
