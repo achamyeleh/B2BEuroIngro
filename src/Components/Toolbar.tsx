@@ -14,7 +14,6 @@ import logo from '../images/gollem.png'
 const Toolbar: React.FC<{sidebarClickHandler:()=>void}> = (props) => {
 
   return ( 
-		<Router>
 			<nav>
 			<div className="hamburger-btn">
 				<Hamburger click ={props.sidebarClickHandler} />  
@@ -31,20 +30,12 @@ const Toolbar: React.FC<{sidebarClickHandler:()=>void}> = (props) => {
 			</div>
 			</nav>
 	
-			<Switch>
-				<Route exact path='/' component={Home} />
-				<Route path='/youtubers' component={RegistrationForm} />
-				<Route path='/report' component={Grid} />
-				<Route path="/businessIdea" component={BusinessIdea} />
-				<Route path='/news' component={News} />
-				<Route path='/aboutUs' component={AboutUs} />
-			</Switch>
-		</Router>
+		
 	
   )
 }
 
-const Home =() => (
+const Home:React.FC =() => (
 	<div >
 		<img className="logo" src={logo} alt="logo"/>
 	</div>

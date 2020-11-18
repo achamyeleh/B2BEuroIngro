@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types";
 import './sidebar.css'
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import Grid from '../DisplayGrid'
 import BusinessIdea from '../BusinessIdea'
 import {RegistrationForm} from '../RegistrationForm'
@@ -28,7 +28,6 @@ interface Props {
       //   </ul>
       //   </nav>
 
-    <Router>
       <nav className={sidebarClasses}>
         <div onClick={props.click}>
         <Link className="link-item" to = "/youtubers"> Youtubers </Link>
@@ -46,16 +45,6 @@ interface Props {
         <Link className="link-item" to= "/aboutUs"> About Us </Link> 
         </div>
       </nav>
-  
-      <Switch>
-      <Route exact path='/' component={Home} />
-        <Route path='/youtubers' component={RegistrationForm} />
-        <Route path='/report' component={Grid} />
-        <Route path="/businessIdea" component={BusinessIdea} />
-        <Route path='/news' component={News} />
-        <Route path='/aboutUs' component={AboutUs} />
-      </Switch>
-  </Router>
  
    )
 
