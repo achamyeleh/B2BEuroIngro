@@ -5,7 +5,7 @@ import './aboutUs.css'
 const AboutUs: React.FC=() =>{
 
   return (
-    <div>
+    <div className="aboutUs">
       <h3> About GollemTimes</h3>
       <div>
         <img className="banner" src ={logo}  alt="img" />

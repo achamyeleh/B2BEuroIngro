@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
 import Nav from './Components/Toolbar'
-import {Footer} from './Components/Footer.jsx'
 import {Table} from './Components/test'
 import { ApolloClient, InMemoryCache , ApolloProvider} from '@apollo/client';
 import SideBar from './Components/sidebar/SideBar';
@@ -10,11 +9,12 @@ import { TextSpan } from 'typescript';
 import Routing from './Components/Routing';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import Home from './Components/Home';
-import { RegistrationForm } from './Components/RegistrationForm';
-import Grid from './Components/DisplayGrid';
+import { RegistrationForm } from './Components/registration/RegistrationForm';
+import Grid from './Components/grid/DisplayGrid';
 import BusinessIdea from './Components/businessIdea/BusinessIdea';
 import News from './Components/news/News';
 import AboutUs from './Components/aboutUs/AboutUs';
+import Footer from './Components/footer/Footer';
 
 
 const client = new ApolloClient({
@@ -38,7 +38,7 @@ const App:React.FC = () => {
   }
   return (
     <Router>
-    <div className="App" style={{height:'100%'}}>
+    <div className="App" >
       <ApolloProvider client={client}>
         <Nav sidebarClickHandler = {sidebarToggleClickHandler}/>
         <SideBar show={sideBarOpen} click={backDropClickHandler}/>

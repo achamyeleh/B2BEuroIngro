@@ -1,12 +1,12 @@
 import * as React from 'react';
- import { Formik, FormikHelpers, FormikProps, Form, Field, FieldProps } from 'formik';
- import Button from '@material-ui/core/Button';
+import { Formik, FormikHelpers, FormikProps, Form, Field, FieldProps } from 'formik';
+import Button from '@material-ui/core/Button';
 //  import '../App.css'
-import '../styles/components.css'
- import * as Yup from 'yup'
- import RadioButtonsGroup from './Radio'
- import {MUITextField} from './MUITextField'
- import {MUIDropBox, MUIDropBoxItem } from './MUIDropBox'
+import './form.css'
+import * as Yup from 'yup'
+import RadioButtonsGroup from '../styledComponents/Radio'
+import {MUITextField} from '../styledComponents/MUITextField'
+import {MUIDropBox, MUIDropBoxItem } from '../styledComponents/MUIDropBox'
 
  const GenderItems: MUIDropBoxItem[] = [
    {
@@ -83,12 +83,13 @@ import '../styles/components.css'
    password: string;
    gender: string;
   //  birthday: any;
-   country: string;
+  //  country: string;
  }
  
  export const RegistrationForm: React.FC<MyFormValues> = () => {
    const initialValues: MyFormValues = { firstName: '', lastName: '', telegramName: '', channelName: '', 
-   email:'', password:'', gender:'', country:''
+   email:'', password:'', gender:''
+  //  , country:''
   //   , birthday: Date.now(), 
 };
   return (
@@ -97,8 +98,8 @@ import '../styles/components.css'
         initialValues={initialValues}
         validationSchema={SignupSchema}
         onSubmit={(values, actions) => {
-          console.log('acheaaaa',{ values, actions });
-          alert(JSON.stringify(values, null, 2));
+          // console.log('acheaaaa',{ values, actions });
+          // alert(JSON.stringify(values, null, 2));
           actions.setSubmitting(false);
         }}>
         {({ errors, touched}) => (
@@ -140,9 +141,9 @@ import '../styles/components.css'
             <MUIDropBox name="gender" label="Gender" items={GenderItems}/>
           </div> 
 
-          <div>
+          {/* <div>
             <MUIDropBox name="country" label="Country" items={CountryItems}/>
-          </div>
+          </div> */}
 
           <button type="submit">Submit</button>
         </div>

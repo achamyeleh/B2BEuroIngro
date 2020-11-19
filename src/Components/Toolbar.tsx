@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from "prop-types";
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
-import Grid from './DisplayGrid'
+import Grid from './grid/DisplayGrid'
 import '../styles/header.css'
 import BusinessIdea from './businessIdea/BusinessIdea'
-import {RegistrationForm} from './RegistrationForm'
+import {RegistrationForm} from './registration/RegistrationForm'
 import AboutUs from './aboutUs/AboutUs'
 import News from './news/News'
 import Hamburger from './sidebar/Hamburger'

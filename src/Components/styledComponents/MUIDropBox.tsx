@@ -5,7 +5,7 @@ import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import { InputLabel } from '@material-ui/core';
 import FormHelperText from '@material-ui/core/FormHelperText'
-import '../App.css'
+import '../../App.css'
 import { RecentActorsRounded } from '@material-ui/icons';
 import { string } from 'yup';
 import PropTypes from 'prop-types';

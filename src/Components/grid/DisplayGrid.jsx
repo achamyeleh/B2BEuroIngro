@@ -3,7 +3,8 @@ import { AgGridColumn, AgGridReact } from 'ag-grid-react';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-import '../App.css'
+// import '../../App.css'
+import './grid.css'
 // sortable: true,  filter: true, width: 400, resiable: true, editable: true, rowSelection="multiple", checkboxSelection:true
 const Grid = () => {
     const [rowData, setRowData] = useState([]);
@@ -64,7 +65,7 @@ const Grid = () => {
 
     return (
        
-        <div className="ag-theme-alpine" style={ { height: '700px'} }>
+        <div className="ag-theme-alpine grid" style={ { height: '700px'} }>
             <AgGridReact
                 columnDefs={colDefs}
                 rowData={rowData} 

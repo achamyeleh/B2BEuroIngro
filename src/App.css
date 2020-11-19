@@ -5,12 +5,18 @@
   font-family: 'Playfair Display', serif;
 }
 
+html,
 body {
   font-family: sans-serif;
+  min-height: calc(100vh - 11vh - 12vh);
 }
 
 .input {
   width: 80%;
+}
+.App {
+  min-height: 100vh;
+  position: relative;
 }
 
 .field {
@@ -43,15 +49,6 @@ button {
 
 .muiTextField {
   margin: 10px 0;
-}
-
-.footer {
-  margin: 20px;
-  background-color: rgb(136, 141, 143);
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
 }
 
 .form {

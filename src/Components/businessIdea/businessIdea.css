@@ -1,3 +1,7 @@
+.business {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 h2 {
   text-align: center;
   margin-top: 2em;
