@@ -1,0 +1,2 @@
+export const GETCATEGORIES = 'GETCATEGORIES';
+export const GETPOSTS = 'GETPOSTS';

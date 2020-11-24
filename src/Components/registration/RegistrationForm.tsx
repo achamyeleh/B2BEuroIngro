@@ -4,93 +4,61 @@ import Button from '@material-ui/core/Button';
 //  import '../App.css'
 import './form.css'
 import * as Yup from 'yup'
-import RadioButtonsGroup from '../styledComponents/Radio'
-import {MUITextField} from '../styledComponents/MUITextField'
-import {MUIDropBox, MUIDropBoxItem } from '../styledComponents/MUIDropBox'
+import RadioButtonsGroup from '../fields/Radio'
+import {MUITextField} from '../fields/MUITextField'
+import {MUIDropBox, MUIDropBoxItem } from '../fields/MUIDropBox'
+import axios from 'axios'
 
- const GenderItems: MUIDropBoxItem[] = [
+ const CategoryItems: MUIDropBoxItem[] = [
    {
-     label: 'Male',
-     value: 'Male'
+     label: 'react',
+     value: 'react'
    },
    {
-     label: 'Female',
-     value: 'Female'
+     label: 'redux',
+     value: 'redux'
    }
  ]
 
- const CountryItems: MUIDropBoxItem[] = [
-  {
-    label: 'Ethiopia',
-    value: 'Ethiopia'
-  },
-  {
-    label: 'Italy',
-    value: 'Italy'
-  },
-  {
-    label: 'USA',
-    value: 'USA'
-  },
-  {
-    label: 'England',
-    value: 'England'
-  }
-]
  const SignupSchema = Yup.object().shape({
-  firstName: Yup.string()
+  id: Yup.string()
     .min(3, 'Too Short!')
-    .max(10, 'Too Long!')
+    .max(250, 'Too Long!')
     .required('Required'),
-  lastName: Yup.string()
+  author: Yup.string()
     .min(3, 'Too Short!')
-    .max(10, 'Too Long!')
+    .max(100, 'Too Long!')
     .required('Required'),
-  telegramName: Yup.string()
+  body: Yup.string()
     .min(5, 'Too Short!')
-    .max(10, 'Too Long!')
+    .max(250, 'Too Long!')
     .required('Required'),
-  channelName: Yup.string()
+  category: Yup.string()
     .min(4, 'Too Short!')
-    .max(10, 'Too Long!')
+    .max(50, 'Too Long!')
     .required('Required'),
-  email: Yup.string()
-    .email('Invalid email')
-    .required('Required'),
-  password: Yup.string()
+  timestamp: Yup.string()
     .min(4, 'Too Short!')
-    .max(10, 'Too Long!')
+    .max(50, 'Too Long!')
     .required('Required'),
-  gender: Yup.string()
-    .min(1, 'Too Short!')
-    .max(6, 'Too Long!')
-    .required('Required'),
-  // birthday: Yup.date()
-  //   .max(new Date(), 'This is a future time!')
-  //   .required('Required'),
-  // country: Yup.string()
-  //   .min(4, 'Too Short!')
-  //   .max(15, 'Too Long!')
-  //   .required('Required'),
+  title: Yup.string()
+    .min(4, 'Too Short!')
+    .max(100, 'Too Long!')
+    .required('Required')
 });
 
  interface MyFormValues {
-   firstName: string;
-   lastName: string; 
-   telegramName: string;
-   channelName: string;
-   email: string;
-   password: string;
-   gender: string;
-  //  birthday: any;
-  //  country: string;
+  id: string;
+  author: string;
+  body: string;
+  category?: string;
+  timestamp?: number;
+  title: string;
  }
  
  export const RegistrationForm: React.FC<MyFormValues> = () => {
-   const initialValues: MyFormValues = { firstName: '', lastName: '', telegramName: '', channelName: '', 
-   email:'', password:'', gender:''
-  //  , country:''
-  //   , birthday: Date.now(), 
+   const initialValues: MyFormValues = { id: '', author: '', body: '', 
+   title:''
 };
   return (
     <div className="form">
@@ -98,8 +66,16 @@ import {MUIDropBox, MUIDropBoxItem } from '../styledComponents/MUIDropBox'
         initialValues={initialValues}
         validationSchema={SignupSchema}
         onSubmit={(values, actions) => {
-          // console.log('acheaaaa',{ values, actions });
-          // alert(JSON.stringify(values, null, 2));
+        axios.post('http://140.238.218.219:3001/posts', values, {
+        headers: {
+        'Authorization': 'Bearer ' + 'B2B',
+      }
+    }).then(res => {
+      console.log('response === ', res)
+    })
+          console.log('acheaaaa',{ values, actions });
+          alert(JSON.stringify(values, null, 2));
+
           actions.setSubmitting(false);
         }}>
         {({ errors, touched}) => (
@@ -109,41 +85,28 @@ import {MUIDropBox, MUIDropBoxItem } from '../styledComponents/MUIDropBox'
           </div>
 
         <div className="field input">
-             {/* <label htmlFor="firstName">First Name</label>
-            <Field id="firstName" name="firstName" placeholder="First Name" onChange={handleChange} />
-         </div> 
-           {errors.firstName && touched.firstName && <div>{errors.firstName}</div>} */}
           <div>
-            <MUITextField name="firstName" label="First Name" />
+            <MUITextField name="id" label="id" />
+          </div>
+          <div>
+            <MUITextField name="author" label="author" />
           </div>
         
           <div>
-            <MUITextField name="lastName" label="Last Name" />
-          </div>
-              
-          <div>
-            <MUITextField name="email" label="Email" />
+            <MUITextField name="body" label="body" />
           </div>
             
           <div>
-            <MUITextField name="password" label="Password" type="password" />
+            <MUIDropBox name="category" label="category" items= {CategoryItems} />
           </div>
 
           <div>
-            <MUITextField name="telegramName" label="Telegram Name"  />
+            <MUITextField name="timestamp" label="timestamp" />
           </div>
 
           <div>
-            <MUITextField name="channelName" label="Channel Name" />
-          </div>
-
-          <div>
-            <MUIDropBox name="gender" label="Gender" items={GenderItems}/>
-          </div> 
-
-          {/* <div>
-            <MUIDropBox name="country" label="Country" items={CountryItems}/>
-          </div> */}
+            <MUITextField name="title" label="title" />
+          </div>  
 
           <button type="submit">Submit</button>
         </div>
@@ -152,3 +115,5 @@ import {MUIDropBox, MUIDropBoxItem } from '../styledComponents/MUIDropBox'
       </Formik>
     </div>
    )};
+
+   

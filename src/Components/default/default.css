@@ -1,0 +1,42 @@
+.news {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+h1 {
+  text-align: center;
+  margin-top: 2em;
+  color: red;
+}
+.posts {
+  margin-left: 20rem;
+  font-size: 1.4rem;
+}
+
+li {
+  width: 500px;
+
+}
+.remove-item {
+  display: inline-block;
+  float: right;
+  color: red;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-left: 100px;
+}
+
+.sort {
+  display: flex;
+  justify-content: center;
+  border: solid;
+  align-items: center;
+  margin-left: 5rem;
+  margin-top: 5rem;
+  width: 850px;
+  height: 80px;
+  font-size: 1.25rem;
+}
+.sort button {
+  padding: 10px ;
+  
+}

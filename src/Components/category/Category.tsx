@@ -1,8 +1,8 @@
 import React from 'react'
 import logo from '../../images/logo.png';
-import './aboutUs.css'
+import './category.css'
 
-const AboutUs: React.FC=() =>{
+const Category: React.FC=() =>{
 
   return (
     <div className="aboutUs">
@@ -36,4 +36,4 @@ const AboutUs: React.FC=() =>{
   )
 }
 
-export default AboutUs;
+export default Category;

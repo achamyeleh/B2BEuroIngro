@@ -8,13 +8,10 @@ import BackDrop from './Components/sidebar/BackDrop';
 import { TextSpan } from 'typescript';
 import Routing from './Components/Routing';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
-import Home from './Components/Home';
 import { RegistrationForm } from './Components/registration/RegistrationForm';
-import Grid from './Components/grid/DisplayGrid';
 import BusinessIdea from './Components/businessIdea/BusinessIdea';
-import News from './Components/news/News';
-import AboutUs from './Components/aboutUs/AboutUs';
-import Footer from './Components/footer/Footer';
+import Default from './Components/default/Default';
+import Category from './Components/category/Category';
 
 
 const client = new ApolloClient({
@@ -43,15 +40,12 @@ const App:React.FC = () => {
         <Nav sidebarClickHandler = {sidebarToggleClickHandler}/>
         <SideBar show={sideBarOpen} click={backDropClickHandler}/>
         <Switch>
-          <Route  path='/'exact  component={Home} />
+          <Route exact path='/' component={Default} />
           <Route path='/youtubers' component={RegistrationForm} />
-          <Route path='/report' component={Grid} />
           <Route path="/businessIdea" component={BusinessIdea} />
-          <Route path='/news' component={News} />
-          <Route path='/aboutUs' component={AboutUs} />
+          <Route path='/category' component={Category} />
         </Switch>
         {backDrop}
-        <Footer />
       </ApolloProvider>
     </div>
     </Router>

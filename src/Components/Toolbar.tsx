@@ -1,12 +1,11 @@
 import React from 'react'
 import PropTypes from "prop-types";
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
-import Grid from './grid/DisplayGrid'
 import '../styles/header.css'
 import BusinessIdea from './businessIdea/BusinessIdea'
 import {RegistrationForm} from './registration/RegistrationForm'
-import AboutUs from './aboutUs/AboutUs'
-import News from './news/News'
+import Category from './category/Category'
+import News from './default/Default'
 import Hamburger from './sidebar/Hamburger'
 import logo from '../images/gollem.png'
 
@@ -19,14 +18,12 @@ const Toolbar: React.FC<{sidebarClickHandler:()=>void}> = (props) => {
 				<Hamburger click ={props.sidebarClickHandler} />  
 			</div>  
 			<div className="logo-icon">
-				<Home />
 			</div>
 			<div className ="navigation-items">
-				<Link className="link-item" to = "/youtubers"> Youtubers </Link>
-				<Link className="link-item" to = "/report"> Report  </Link>
+				<Link className="link-item" to = "/youtubers"> Posts </Link>
 				<Link className="link-item" to= "/businessIdea"> Business Idea </Link>
-				<Link className="link-item" to= "/news"> News </Link>
-				<Link className="link-item" to= "/aboutUs"> About Us </Link> 
+				<Link className="link-item" to= "/"> Default </Link>
+				<Link className="link-item" to= "/category"> Category </Link> 
 			</div>
 			</nav>
 	

@@ -19,7 +19,6 @@ const SideBar:React.FC<Props> = (props) => {
     <nav className={sidebarClasses}>
       <ul>
         <li onClick={props.click}><Link className="item" to = "/youtubers"> Youtubers </Link></li>
-        <li onClick={props.click}><Link className="item" to = "/report"> Report  </Link> </li>
         <li onClick={props.click}><Link className="item"  to= "/businessIdea"> Business Idea </Link> </li>
         <li onClick={props.click}><Link className="item"  to= "/news"> News </Link> </li>
         <li onClick={props.click}><Link className="item"  to= "/aboutUs"> About Us </Link> </li>
