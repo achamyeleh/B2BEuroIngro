@@ -48,12 +48,12 @@ import axios from 'axios'
 });
 
  interface MyFormValues {
-  id: string;
-  author: string;
-  body: string;
+  id?: string;
+  author?: string;
+  body?: string;
   category?: string;
   timestamp?: number;
-  title: string;
+  title?: string;
  }
  
  export const RegistrationForm: React.FC<MyFormValues> = () => {

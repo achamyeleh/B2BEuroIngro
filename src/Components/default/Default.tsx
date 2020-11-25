@@ -5,7 +5,7 @@ import { string } from 'yup'
 import { connect } from 'react-redux';
 import { getCategoriesAction, getPostsAction } from './actions';
 import PropTypes from "prop-types";
-
+import {RegistrationForm} from '../registration/RegistrationForm'
 
   // async function fetchMoviesJSON() {
   //   const response = await fetch('http://140.238.218.219:3001/categories');
@@ -43,20 +43,9 @@ const Default:FC<Props> = (props) => {
   const showForm = () => {
      return (
        <div> 
-      <form id= "add-app">
-  
-           <label>Application Name : </label>
-           <input type="text" name="name" />
-  
-           <label> id : </label>
-           {/* <input type="text" ></input> */}
-  
-           <label>Server details : </label>
-           {/* <input ></input> */}
-  
-           <button>Create</button>
-        </form>
-        </div>
+         <RegistrationForm />
+    
+        </div> 
        );
    }
  
