@@ -81,7 +81,7 @@ import axios from 'axios'
         {({ errors, touched}) => (
         <Form className="form form-area">
           <div>
-            <h2>{`Youtubers' Registration Form`}</h2>
+            <h2>Form</h2>
           </div>
 
         <div className="field input">

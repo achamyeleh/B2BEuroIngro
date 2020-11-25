@@ -1,6 +1,6 @@
 import React from 'react'
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
-import BusinessIdea from './businessIdea/BusinessIdea'
+import PostDetail from './postDetail/PostDetail'
 import {RegistrationForm} from './registration/RegistrationForm'
 import AboutUs from './category/Category'
 import Default from './default/Default'
@@ -35,7 +35,7 @@ const checkAuth = () => {
     <Switch>
       <Route exact path='/' component={Default} />
       <Route path='/youtubers' component={RegistrationForm} />
-      <Route path="/businessIdea" component={BusinessIdea} />
+      <Route path="/postDetail" component={PostDetail} />
       <Route path='/aboutUs' component={AboutUs} />
     </Switch>
     </Router>

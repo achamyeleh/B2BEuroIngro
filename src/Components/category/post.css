@@ -1,0 +1,12 @@
+.postItem {
+  border: solid;
+  margin-top: 2rem;
+  width: 50%;
+  margin: auto;
+  background-color:rgba(221, 214, 205,0.1);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.bod {
+  margin-top: 1rem;
+}

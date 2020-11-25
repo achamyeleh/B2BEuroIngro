@@ -9,7 +9,7 @@ import { TextSpan } from 'typescript';
 import Routing from './Components/Routing';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import { RegistrationForm } from './Components/registration/RegistrationForm';
-import BusinessIdea from './Components/businessIdea/BusinessIdea';
+import PostDetail from './Components/postDetail/PostDetail';
 import Default from './Components/default/Default';
 import Category from './Components/category/Category';
 
@@ -42,7 +42,7 @@ const App:React.FC = () => {
         <Switch>
           <Route exact path='/' component={Default} />
           <Route path='/youtubers' component={RegistrationForm} />
-          <Route path="/businessIdea" component={BusinessIdea} />
+          <Route path="/postDetail" component={PostDetail} />
           <Route path='/category' component={Category} />
         </Switch>
         {backDrop}

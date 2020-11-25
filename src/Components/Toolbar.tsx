@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from "prop-types";
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import '../styles/header.css'
-import BusinessIdea from './businessIdea/BusinessIdea'
+import PostDetail from './postDetail/PostDetail'
 import {RegistrationForm} from './registration/RegistrationForm'
 import Category from './category/Category'
 import News from './default/Default'
@@ -21,7 +21,7 @@ const Toolbar: React.FC<{sidebarClickHandler:()=>void}> = (props) => {
 			</div>
 			<div className ="navigation-items">
 				<Link className="link-item" to = "/youtubers"> Posts </Link>
-				<Link className="link-item" to= "/businessIdea"> Business Idea </Link>
+				<Link className="link-item" to= "/postDetail"> Post Detail </Link>
 				<Link className="link-item" to= "/"> Default </Link>
 				<Link className="link-item" to= "/category"> Category </Link> 
 			</div>
